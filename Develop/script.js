@@ -1,14 +1,34 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// DOM elements
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomSymbol,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
 
-  passwordText.value = password;
+// Generator Functions
 
+// LOWERCASE
+function getRandomLower() {
+  // fromCharCode lowercase letters are from 97 - 122
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// UPPERCASE
+function getRandomUpper() {
+  // fromCharCode uppercase letters are from 65 - 90
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+
+// NUMBERS
+function getRandomNumber() {
+  // fromCharCode numbers are from 48 - 57
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+// SYMBOL
+function getRandomSymbol() {
+  var symbols = "!@#$%^&*(){}[]=<>/'.";
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
