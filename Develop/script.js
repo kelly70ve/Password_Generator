@@ -1,4 +1,4 @@
-// DOM elements
+// # DOM elements
 var resultEl = document.getElementById('result');
 var lengthEl = document.getElementById('length');
 var uppercaseEl = document.getElementById('uppercase');
@@ -11,7 +11,7 @@ var clipboardEl = document.getElementById('clipboard');
 
 var randomFunc = {
   lower: getRandomLower,
-  upper: getRandomSymbol,
+  upper: getRandomUpper,
   number: getRandomNumber,
   symbol: getRandomSymbol
 };
@@ -24,15 +24,22 @@ generateEl.addEventListener('click', function() {
   var hasUpper = uppercaseEl.checked;
   var hasNumber = numbersEl.checked;
   var hasSymbol = symbolsEl.checked;
-
-  resultEL.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  
+  resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
 // # Generate Password Function
-function generatePassword(lower, upper, number, symbol, lenth) {
+function generatePassword(lower, upper, number, symbol, length) {
   // 1. Init pw variable
   // 2. Filter out unchecked types
   // 3. Loop over length call generator function for each type
+  // 4. Add final pw to the pw var and return
+
+  var generatePassword = "";
+
+  var typesCount = lower + upper + number + symbol;
+
+  console.log("typesCount: ", typesCount);
 }
 
 
