@@ -1,4 +1,13 @@
 // DOM elements
+var resultEl = document.getElementByID('result');
+var lengthEl = document.getElementByID('length');
+var uppercaseEl = document.getElementByID('uppercase');
+var lowercaseEl = document.getElementByID('lowercase');
+var numbersEl = document.getElementByID('numbers');
+var symbolsEl = document.getElementByID('symbols');
+var generateEl = document.getElementByID('generate');
+var clipboardEl = document.getElementByID('clipboard');
+
 
 var randomFunc = {
   lower: getRandomLower,
