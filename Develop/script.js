@@ -1,12 +1,12 @@
 // DOM elements
-var resultEl = document.getElementByID('result');
-var lengthEl = document.getElementByID('length');
-var uppercaseEl = document.getElementByID('uppercase');
-var lowercaseEl = document.getElementByID('lowercase');
-var numbersEl = document.getElementByID('numbers');
-var symbolsEl = document.getElementByID('symbols');
-var generateEl = document.getElementByID('generate');
-var clipboardEl = document.getElementByID('clipboard');
+var resultEl = document.getElementById('result');
+var lengthEl = document.getElementById('length');
+var uppercaseEl = document.getElementById('uppercase');
+var lowercaseEl = document.getElementById('lowercase');
+var numbersEl = document.getElementById('numbers');
+var symbolsEl = document.getElementById('symbols');
+var generateEl = document.getElementById('generate');
+var clipboardEl = document.getElementById('clipboard');
 
 
 var randomFunc = {
@@ -16,27 +16,44 @@ var randomFunc = {
   symbol: getRandomSymbol
 };
 
-// Generator Functions
+// # Generate Event Listen
 
-// LOWERCASE
+generateEl.addEventListener('click', function() {
+  var length = +lengthEl.value; // this gets the value from the element "length" and returns a string - need the "+" urnary operator to return a number
+  var hasLower = lowercaseEl.checked; // this checks if they're checked or not
+  var hasUpper = uppercaseEl.checked;
+  var hasNumber = numbersEl.checked;
+  var hasSymbol = symbolsEl.checked;
+
+  resultEL.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
+
+// # Generate Password Function
+function generatePassword(lower, upper, number, symbol, lenth) {
+  // 1. Init pw variable
+  // 2. Filter out unchecked types
+  // 3. Loop over length call generator function for each type
+}
+
+
+// # Generator Functions
+
+// ## Lowercase 
 function getRandomLower() {
-  // fromCharCode lowercase letters are from 97 - 122
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97); // fromCharCode lowercase letters are from 97 - 122
 }
 
-// UPPERCASE
+// ## Uppercase
 function getRandomUpper() {
-  // fromCharCode uppercase letters are from 65 - 90
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65); // fromCharCode uppercase letters are from 65 - 90
 }
 
-// NUMBERS
+// ## Numbers
 function getRandomNumber() {
-  // fromCharCode numbers are from 48 - 57
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48); // fromCharCode numbers are from 48 - 57
 }
 
-// SYMBOL
+// ## Symbol
 function getRandomSymbol() {
   var symbols = "!@#$%^&*(){}[]=<>/'.";
   return symbols[Math.floor(Math.random() * symbols.length)];
