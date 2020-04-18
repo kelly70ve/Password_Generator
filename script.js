@@ -25,7 +25,12 @@ generateEl.addEventListener('click', function() {
   var hasNumber = numbersEl.checked;
   var hasSymbol = symbolsEl.checked;
   
-  resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  if( 8 > length < 128) {
+    return alert("A secure password must be between 8 - 128 characters in length. Please try again.");
+  } else {
+    resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+  }
+  
 });
 
 // # Generate Password Function
@@ -70,7 +75,8 @@ clipboardEl.addEventListener('click', function() {
   textArea.select();
   document.execCommand("copy");
   textArea.remove();
-  alert("Password Copied to Clipboard!")
+  alert("Password Copied to Clipboard!");
+  result.innerText = "";
 })
 
 
