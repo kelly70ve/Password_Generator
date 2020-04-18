@@ -46,7 +46,7 @@ input[type=checkbox] {
 	font-size: 18px;
 	letter-spacing: 1px;
 	padding: 12px 10px;
-	height: 50px;
+	height: 140px;
 	width: 100%;
 }
 
@@ -58,9 +58,8 @@ input[type=checkbox] {
 .result-container .btn {
 	font-size: 20px;
 	position: absolute;
-	top: 5px;
 	right: 5px;
-	height: 40px;
+	height: 130px;
 	width: 40px;
 }
 
