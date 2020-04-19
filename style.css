@@ -48,6 +48,7 @@ input[type=checkbox] {
 	height: 140px;
 	width: 100%;
 	border: #506175 1px solid;
+	border-radius: 4px;
 }
 
 .result-container #result {
@@ -70,6 +71,7 @@ input[type=checkbox] {
 	font-size: 16px;
 	padding: 8px 12px;
 	background-color: #d32d27;
+	border-radius: 4px;
 }
 
 
